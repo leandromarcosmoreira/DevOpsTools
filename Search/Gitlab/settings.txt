@@ -1,0 +1,79 @@
+# Configurações de Pool e Concorrência
+# ---------------------------------
+# POOL_CONSIZE: Número inicial de conexões no pool
+# POOL_MAXSIZE: Número máximo de conexões permitidas
+# SEMAPHORE_SIZE: Limite de operações concorrentes para evitar sobrecarga da API
+# MAX_THREADS: Número máximo de threads para processamento de projetos
+POOL_CONSIZE=10
+POOL_MAXSIZE=100
+SEMAPHORE_SIZE=10
+MAX_THREADS=10
+
+# Configurações da API do GitLab
+# -----------------------------
+# TIMEOUT_API_GITLAB: Tempo máximo (em segundos) para aguardar resposta da API
+# PER_PAGE: Número de itens por página nas consultas paginadas
+TIMEOUT_API_GITLAB=30
+PER_PAGE=100
+
+# Configurações de Retry (Tentativas de Reconexão)
+# ----------------------------------------------
+# RETRY_ATTEMPTS: Número máximo de tentativas em caso de falha
+# RETRY_WAIT_MULTIPLIER: Multiplicador para o tempo de espera entre tentativas
+# RETRY_WAIT_MIN: Tempo mínimo de espera (em segundos) entre tentativas
+# RETRY_WAIT_MAX: Tempo máximo de espera (em segundos) entre tentativas
+# MAX_RECURSION_ATTEMPTS: Limite de recursão para evitar loops infinitos
+RETRY_ATTEMPTS=3
+RETRY_WAIT_MULTIPLIER=2
+RETRY_WAIT_MIN=2
+RETRY_WAIT_MAX=15
+MAX_RECURSION_ATTEMPTS=3
+
+# Palavras-chave para Busca
+# ------------------------
+# Lista de termos separados por vírgula que serão procurados nos arquivos
+KEYWORDS=gitauto,gitdev,gitmenu,gitnoob,gitschedule
+
+# Configurações de Arquivos de Saída
+# --------------------------------
+# OUTPUT_FILE: Caminho para o arquivo Excel com os resultados
+# LOG_FILE: Caminho para o arquivo de log
+# CHECKPOINT_FILE: Caminho para o arquivo de checkpoint do progresso
+OUTPUT_FILE=output/resultados.xlsx
+LOG_FILE=log/scanner.log
+CHECKPOINT_FILE=checkpoints/progress.json
+
+# Padrões de Branch para Análise
+# ----------------------------
+# Lista de padrões de nomes de branches que serão analisadas
+BRANCH_PATTERNS=master,main,develop,release.*,hotfix.*,feature.*,bugfix.*,support.*,dev,^[0-9]{1}-[0-9]{1}-[0-9]{1}$
+
+# Configurações de Performance
+# --------------------------
+# BATCH_SIZE: Número de itens processados por lote para otimizar memória
+# CACHE_MAX_SIZE: Tamanho máximo do cache em memória
+BATCH_SIZE=50
+CACHE_MAX_SIZE=1000
+
+# Configurações de Detecção de Arquivos Binários
+# -------------------------------------------
+# BINARY_SAMPLE_SIZE: Tamanho da amostra em bytes para detectar arquivos binários
+# BINARY_THRESHOLD: Limiar de caracteres não-texto para considerar arquivo como binário
+BINARY_SAMPLE_SIZE=1024
+BINARY_THRESHOLD=0.3
+
+# Configurações de Codificação de Texto
+# ----------------------------------
+# Lista de codificações tentadas ao ler arquivos de texto
+TEXT_ENCODINGS=utf-8,latin1,cp1252,iso-8859-1
+
+# Extensões de Arquivos Binários
+# ----------------------------
+# Lista de extensões de arquivo que serão automaticamente ignoradas
+BINARY_EXTENSIONS=.png,.jpg,.jpeg,.gif,.bmp,.ico,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.tar,.gz,.7z,.rar,.exe,.dll,.so,.dylib,.class,.jar,.war,.ear,.pyc,.pyo,.pyd,.db,.sqlite,.sqlite3,.bin,.dat,.iso,.img,.raw
+
+# Cores para Output no Terminal
+# --------------------------
+COLOR_SUCCESS=\033[92m
+COLOR_ERROR=\033[91m
+COLOR_RESET=\033[0m

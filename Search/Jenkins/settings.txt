@@ -1,0 +1,42 @@
+# Configurações dos Servidores Jenkins
+# Lista de servidores Jenkins para pesquisa
+JENKINS_SERVERS = [
+    "https://jenkins.company.network",
+    "https://jenkins-dev.company.network"
+]
+
+# Palavras-chave para busca
+# Lista de termos que serão pesquisados nos projetos
+KEYWORDS = ["gitauto", "gitdev", "gitmenu", "gitnoob", "gitschedule"]
+
+# Configurações de Autenticação
+# Credenciais para acesso à API do Jenkins
+USERNAME = "jenkins_user"  # Seu usuário Jenkins
+API_TOKEN = "default_token"  # Seu token de API Jenkins
+
+# Configurações de Performance
+# Ajuste estes valores de acordo com seu hardware
+CPU_COUNT = 4  # Número de CPUs disponíveis
+MEMORY_LIMIT = 0.8  # Limite de uso de memória (80% da memória total)
+MAX_CONCURRENT_JOBS = 32  # Máximo de jobs simultâneos
+MAX_WORKERS = 16  # Máximo de workers para processamento
+MAX_CONCURRENT_CONNECTIONS = 64  # Máximo de conexões simultâneas
+CHUNK_SIZE = 2097152  # Tamanho do chunk em bytes (2MB)
+
+# Configurações de Timeout e Retry
+MAX_RETRIES = 3  # Número máximo de tentativas
+RETRY_DELAY = 0.5  # Delay entre tentativas em segundos
+CONNECTION_TIMEOUT = 20  # Timeout de conexão em segundos
+KEEPALIVE_TIMEOUT = 30  # Timeout de keepalive em segundos
+
+# Configurações de Cache
+CACHE_DURATION = 7200  # Duração do cache em segundos (2 horas)
+CACHE_MAX_SIZE = 0.3  # Tamanho máximo do cache (30% da memória disponível)
+
+# Configurações de Log
+LOG_MAX_SIZE = 5242880  # Tamanho máximo do arquivo de log (5MB)
+LOG_BACKUP_COUNT = 3  # Número de backups do arquivo de log
+LOG_LEVEL = "INFO"  # Nível de log (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+
+# Configurações de Contexto
+MAX_CONTEXT_LINES = 5  # Número de linhas de contexto antes e depois da ocorrência
